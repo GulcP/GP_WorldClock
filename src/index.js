@@ -9,13 +9,13 @@ function updateTime() {
     "h:mm:ss [<small>]A[</small>]"
   );
 
-  let parisElement = document.querySelector("#paris");
-  let parisDateElement = parisElement.querySelector(".date");
-  let parisTimeElement = parisElement.querySelector(".time");
-  let parisTime = moment().tz("Europe/Paris");
+  let bursaElement = document.querySelector("#bursa");
+  let bursaDateElement = bursaElement.querySelector(".date");
+  let bursaTimeElement = bursaElement.querySelector(".time");
+  let bursaTime = moment().tz("Europe/Istanbul");
 
-  parisDateElement.innerHTML = parisTime.format("dddd, MMMM Do YYYY");
-  parisTimeElement.innerHTML = parisTime.format("h:mm:ss [<small>]A[</small>]");
+  bursaDateElement.innerHTML = bursaTime.format("dddd, MMMM Do YYYY");
+  bursaTimeElement.innerHTML = bursaTime.format("h:mm:ss [<small>]A[</small>]");
 }
 
 updateTime();
@@ -23,6 +23,10 @@ setInterval(updateTime, 1000);
 
 function updateCity(event) {
   let cityTimeZone = event.target.value;
+  if (cityTimeZone === "current") {
+    cityTimeZone = moment.tz.guess();
+  }
+
   let cityName = cityTimeZone.replace("_", " ").split("/")[1];
   let cityTime = moment().tz(cityTimeZone);
   let citiesElement = document.querySelector("#cities");
