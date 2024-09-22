@@ -16,6 +16,16 @@ function updateTime() {
 
   bursaDateElement.innerHTML = bursaTime.format("dddd, MMMM Do YYYY");
   bursaTimeElement.innerHTML = bursaTime.format("h:mm:ss [<small>]A[</small>]");
+
+  let osakaElement = document.querySelector("#osaka");
+  let osakaDateElement = osakaElement.querySelector(".date");
+  let osakaTimeElement = osakaElement.querySelector(".time");
+  let osakaTime = moment().tz("Asia/Tokyo");
+
+  osakaDateElement.innerHTML = osakaTime.format("dddd, MMMM Do YYYY");
+  osakaTimeElement.innerHTML = osakaTime.format("h:mm:ss [<small>]A[</small>]");
+
+  <a href="/">Go back to All Cities</a>;
 }
 
 updateTime();
