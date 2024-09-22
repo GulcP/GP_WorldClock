@@ -24,8 +24,6 @@ function updateTime() {
 
   osakaDateElement.innerHTML = osakaTime.format("dddd, MMMM Do YYYY");
   osakaTimeElement.innerHTML = osakaTime.format("h:mm:ss [<small>]A[</small>]");
-
-  <a href="/">Go back to All Cities</a>;
 }
 
 updateTime();
@@ -52,6 +50,8 @@ function updateCity(event) {
                   "h:mm:ss [<small>]A[</small>]"
                 )}</div>
             </div>
+              <a href="/">Go back to All Cities</a>;
+
   
   `;
 }
